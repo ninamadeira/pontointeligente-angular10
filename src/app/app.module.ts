@@ -8,6 +8,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { LoginModule, LoginRoutingModule, CadastroPjModule, CadastroPjRoutingModule, CadastroPfModule, CadastroPfRoutingModule } from './autenticacao';
 import { AppRoutingModule } from './app-routing.module';
 import {FuncionarioModule, FuncionarioRoutingModule } from './funcionario';
+import {AdminModule, AdminRoutingModule} from './admin';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,8 @@ import {FuncionarioModule, FuncionarioRoutingModule } from './funcionario';
     CadastroPfRoutingModule,
     FuncionarioModule,
     FuncionarioRoutingModule,
+    AdminModule,
+    AdminRoutingModule,
 
     AppRoutingModule
   ],

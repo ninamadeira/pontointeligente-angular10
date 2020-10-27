@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
+
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
@@ -13,6 +14,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatCardModule } from '@angular/material/card';
+import { MatPaginatorIntl } from '@angular/material/paginator';
 
 import { 
 	ListagemComponent, 
@@ -22,8 +24,11 @@ import {
 
 import { 
   HttpUtilService, 
-  LancamentoService
+  LancamentoService,
+  PtBrMatPaginatorIntl,
 } from '../shared';
+
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
@@ -40,7 +45,8 @@ import {
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatCardModule
+    MatCardModule,
+    SharedModule
   ],
   declarations: [
   	ListagemComponent, 
@@ -49,7 +55,8 @@ import {
   ],
   providers: [
     HttpUtilService, 
-    LancamentoService
+    LancamentoService,
+    { provide: MatPaginatorIntl, useClass: PtBrMatPaginatorIntl }
   ]
 })
 export class FuncionarioModule { }
